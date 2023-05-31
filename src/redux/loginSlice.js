@@ -63,3 +63,6 @@ const loginSlice = createSlice({
     },
   });
   
+  export const { fetchUser } = loginSlice.actions;
+  export default loginSlice.reducer;
+  
