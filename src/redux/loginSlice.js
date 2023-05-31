@@ -34,4 +34,32 @@ const initialState = {
     loginUser: [],
     error: null,
   };
+
+
+  
+const loginSlice = createSlice({
+    name: 'login',
+    initialState,
+    reducers: {},
+    extraReducers: {
+      [loginUser.pending]: (state) => ({
+        ...state,
+        loading: true,
+      }),
+      [loginUser.fulfilled]: (state, action) => ({
+        ...state,
+        loading: false,
+        isLogin: true,
+        loginUser: action.payload,
+        error: null,
+      }),
+      [loginUser.rejected]: (state, action) => ({
+        ...state,
+        loading: false,
+        isLogin: false,
+        loginUser: {},
+        error: action.payload.error,
+      }),
+    },
+  });
   
