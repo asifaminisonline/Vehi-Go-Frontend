@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-import Url from "../api/api";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import Url from '../api/api';
 
 const initialState = {
   loading: true,
@@ -8,12 +8,13 @@ const initialState = {
   message: '',
   error: null,
   car: {},
-}
+};
 
-const token = localStorage.getItem('token')
+const token = localStorage.getItem('token');
 
 export const getCars = createAsyncThunk(
-  'car/getCars', async(car, { rejectWithValue }) => {
+  'car/getCars',
+  async (car, { rejectWithValue }) => {
     try {
       const config = {
         headers: {
@@ -36,21 +37,22 @@ const carSlice = createSlice({
   name: 'car',
   initialState,
   extraReducers(builder) {
-    builder.addCase(getCars.pending, (state) => ({
-      ...state,
-      loading: true,
-    })),
-    builder.addCase(getCars.fulfilled, (state, action) => ({
-     ...state,
-      loading: false,
-      message: action.payload.messaage,
-      error: null,
-    })),
-    builder.addCase(getCars.rejected, (state, action) => ({
-      ...state,
-      loading: false,
-      error: action.payload.error,
-    }));
+    builder
+      .addCase(getCars.pending, (state) => ({
+        ...state,
+        loading: true,
+      }))
+      .addCase(getCars.fulfilled, (state, action) => ({
+        ...state,
+        loading: false,
+        message: action.payload.messaage,
+        error: null,
+      }))
+      .addCase(getCars.rejected, (state, action) => ({
+        ...state,
+        loading: false,
+        error: action.payload.error,
+      }));
   },
 });
 
