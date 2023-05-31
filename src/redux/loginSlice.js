@@ -28,4 +28,10 @@ export const loginUser = createAsyncThunk(
   },
 );
 
-
+const initialState = {
+    loading: false,
+    isLogin: false,
+    loginUser: [],
+    error: null,
+  };
+  
