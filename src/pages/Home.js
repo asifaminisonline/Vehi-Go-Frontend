@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import { useSelector, useDispatch } from 'react-redux';
+import EachCarFeature from '../components/EachCar';
 import { getCars } from '../redux/CarSlice';
+import Loading from '../components/Loading';
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -25,7 +27,7 @@ const Homepage = () => {
     <div>
       {cars.loading ? (
         <div className="flex justify-center min-h-[60vh] items-center">
-          Car List
+          <Loading />
         </div>
       ) : (
         <div className="">
@@ -55,9 +57,19 @@ const Homepage = () => {
             ref={userefTarget}
             className="flex items-center mx-2 md:scale-90 mt-2 gap-4 overflow-scroll scrollbar-none scroll-smooth scrollbar-hide transition-all"
           >
-            {/* {cars.data[0]
-          && cars.data.map((elem) => (??))
-                  } */}
+            {cars.data[0] &&
+              cars.data.map((elem) => (
+                <EachCarFeature
+                  key={elem.id}
+                  id={elem.id}
+                  name={elem.name}
+                  color={elem.color}
+                  description={elem.description}
+                  price={elem.price}
+                  image={elem.image}
+                  className="md:w-1/2"
+                />
+              ))}
           </div>
         </div>
       )}
