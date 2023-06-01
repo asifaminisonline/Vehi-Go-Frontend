@@ -57,8 +57,8 @@ const Homepage = () => {
             ref={userefTarget}
             className="flex items-center mx-2 md:scale-90 mt-2 gap-4 overflow-scroll scrollbar-none scroll-smooth scrollbar-hide transition-all"
           >
-            {cars.data[0] &&
-              cars.data.map((elem) => (
+            {cars.data[0]
+              && cars.data.map((elem) => (
                 <EachCarFeature
                   key={elem.id}
                   id={elem.id}
