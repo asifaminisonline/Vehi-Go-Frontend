@@ -8,12 +8,11 @@ import Loading from '../components/Loading';
 const Homepage = () => {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.car);
+  const userefTarget = useRef();
 
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch]);
-
-  const userefTarget = useRef();
 
   const next = () => {
     userefTarget.current.scrollLeft += 240;
