@@ -17,12 +17,15 @@ export const showCar = async (id) => {
 const CarsList = () => {
   const [cars, setCars] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     const getCars = async () => {
       try {
         const response = await axios.get(`${Url}/api/v1/cars`);
         setCars(response.data);
+        setTotalPages(Math.ceil(response.data.length / 3));
       } catch (error) {
         console.error('Error fetching cars:', error);
       }
@@ -30,12 +33,33 @@ const CarsList = () => {
     getCars();
   }, []);
 
+// Display current page and number of pages
+const handlePreviousPage = () => {
+  setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+}
+
+const handleNextPage = () => {
+  setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+}
+
+  // Handle pagination arrows
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => prevIndex - 1);
   };
 
   const handleNextClick = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1);
+  };
+
+  // onClick handling two functions at the same time
+  const handlePrevious = () => {
+    handlePrevClick();
+    handlePreviousPage();
+  };
+
+  const handleNext = () => {
+    handleNextClick();
+    handleNextPage();
   };
 
   const renderCars = () => {
@@ -48,15 +72,18 @@ const CarsList = () => {
         className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
         style={{ minWidth: '250px', maxWidth: '550px', margin: '0 auto' }}
       >
-        <img src={car.image} alt={car.name} className="img-fluid" />
+        <img src={car.image} alt={car.name} className="img-fluid mb-2 " />
         <div>
-          <div>
+          <div className="text-center">
             <p>
-              <h5>{car.name}</h5>
+              <b>{car.name}</b>
             </p>
           </div>
-          <div>
+          <div className="text-center">
             <span>${parseFloat(car.price).toFixed(2)}</span>
+            <em>
+              <b>&nbsp;per day</b>
+            </em>
           </div>
         </div>
       </div>
@@ -74,10 +101,27 @@ const CarsList = () => {
         <hr className="md:w-28 w-16 md:border-2 border-1 border-green-600" />
       </div>
 
-      <div className="flex items-center justify-between mx-2 p-5 md:scale-90 mt-2 gap-4" style={{ maxWidth: '100vw', display: 'flex' }}>
-      <div className="d-flex flex-column justify-content-center"><FaChevronLeft onClick={handlePrevClick} size={24} /></div>
+      <div
+        className="flex items-center justify-between mx-2 p-5 md:scale-90 mt-2 gap-4"
+        style={{ maxWidth: '100vw', display: 'flex' }}
+      >
+        <div className="d-flex flex-column justify-content-center">
+          <FaChevronLeft onClick={handlePrevious} size={24} />
+        </div>
         {renderCars()}
-       <div className="d-flex flex-column justify-content-center"> {showRightArrow && <FaChevronRight onClick={handleNextClick} size={24} />}</div>
+        <div className="d-flex flex-column justify-content-center">
+          {' '}
+          {showRightArrow && (
+            <FaChevronRight
+              onClick={handleNext}
+              size={24}
+              className={currentPage === totalPages ? 'invisible' : ''}
+            />
+          )}
+        </div>
+      </div>
+      <div className="text-center mt-2">
+        {currentPage}/{totalPages}
       </div>
     </div>
   );
