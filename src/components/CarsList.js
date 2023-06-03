@@ -33,14 +33,14 @@ const CarsList = () => {
     getCars();
   }, []);
 
-// Display current page and number of pages
-const handlePreviousPage = () => {
-  setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-}
+  // Display current page and number of pages
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  };
 
-const handleNextPage = () => {
-  setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-}
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  };
 
   // Handle pagination arrows
   const handlePrevClick = () => {
@@ -106,16 +106,20 @@ const handleNextPage = () => {
         style={{ maxWidth: '100vw', display: 'flex' }}
       >
         <div className="d-flex flex-column justify-content-center">
-          <FaChevronLeft onClick={handlePrevious} size={24} />
+          {currentPage > 1 && (<FaChevronLeft
+            onClick={handlePrevious}
+            size={24}
+            className=""
+          />)}
         </div>
         {renderCars()}
         <div className="d-flex flex-column justify-content-center">
           {' '}
-          {showRightArrow && (
+          {currentPage < totalPages && (
             <FaChevronRight
               onClick={handleNext}
               size={24}
-              className={currentPage === totalPages ? 'invisible' : ''}
+              className="cursor-pointer"
             />
           )}
         </div>
