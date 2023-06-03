@@ -49,7 +49,7 @@ const CarDetails = () => {
             <img
               src={car.image}
               alt={car.name}
-              className="img-fluid"
+              className="img-fluid mt-5"
               style={{
                 marginRight: '1rem',
                 marginBottom: '1rem',
