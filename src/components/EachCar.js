@@ -1,37 +1,100 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { showCar } from './CarsList';
 
-const EachCar = ({
-  name, color, price, image, id,
-}) => (
-  <div className="flex flex-col justify-center min-h-[260px] min-w-[220px] p-1 bg-white border border-gray-200 drop-shadow-full hover:shadow-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 scale-100">
-    <Link to={`/cars/${id}`}>
-      <div className="h-48 w-[13rem] mb-6 flex justify-center">
-        <img src={image} alt="" className="w-full h-full" />
+const CarDetails = () => {
+  const { id } = useParams();
+  const [car, setCar] = useState(null);
+
+  useEffect(() => {
+    const getCar = async () => {
+      const carData = await showCar(id);
+      console.log('Fetched car:', carData);
+      setCar(carData);
+    };
+    getCar();
+  }, [id]);
+
+  const buttonStyle = {
+    // display: 'flex',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // margin: '0 auto',
+    // maxWidth: '300px',
+  };
+
+  if (!car) {
+    return <div>Loading...</div>;
+  }
+
+  console.log('Rendered car:', car);
+  return (
+    <div className="d-flex align-items-center justify-content-center">
+      <div
+        className="p-4 align-items-center justify-content-center"
+        style={{
+          backgroundColor: 'rgb(211,211,211,0.3)',
+          // maxWidth: '1080px',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <h4 className="text-center">{car.name}</h4>
+        <div
+          className="d-flex ms-3 mt-4"
+          style={{ maxWidth: '1440px', gap: '30px' }}
+        >
+          <div style={{ maxWidth: '600px' }}>
+            <img
+              src={car.image}
+              alt={car.name}
+              className="img-fluid"
+              style={{
+                marginRight: '1rem',
+                marginBottom: '1rem',
+                boxShadow: '15px 20px 12px 3px rgba(0, 0, 0, 0.3)',
+                border: '1px solid rgba(0, 0, 0, 0.1)',
+              }}
+            />
+          </div>
+          <div className="p-4" style={{ maxWidth: '600px' }}>
+            <p
+              className="text-start ms-4"
+              style={{
+                color: 'grey',
+                fontWeight: '',
+                fontFamily: 'Arial, sans-serif',
+              }}
+            >
+              {car.description}
+            </p>
+            <hr />
+            <p className="text-center ms-4">
+              You can rent this&nbsp;
+              {car.name}
+              &nbsp; for&nbsp;
+              <b>
+                <em>only</em>
+                &nbsp; $
+                {parseFloat(car.price).toFixed(2)}
+                &nbsp; per day
+              </b>
+            </p>
+            <div style={{ buttonStyle }}>
+              <button
+                type="button"
+                style={{ width: '100%' }}
+                className="btn btn-primary w-100 mt-5 text-center"
+              >
+                ADD TO FAVORITES
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <p className="text-green-600 font-bold text-lg capitalize">{name}</p>
-      <p className="text-slate-600 font-medium text-sm">
-        $
-        {price}
-      </p>
-      <p className="text-green-700 font-bold text-xs">
-        <span className="text-black">
-          {' '}
-          {color}
-        </span>
-      </p>
-    </Link>
-  </div>
-);
-
-EachCar.propTypes = {
-  name: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+    </div>
+  );
 };
 
-export default EachCar;
+export default CarDetails;

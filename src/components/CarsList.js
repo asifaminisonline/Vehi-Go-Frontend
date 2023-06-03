@@ -3,6 +3,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Url from '../api/api';
 
+export const showCar = async (id) => {
+  try {
+    const response = await axios.get(`${Url}/api/v1/cars/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching car:', error);
+    return null;
+  }
+};
+
 const CarsList = () => {
   const [cars, setCars] = useState([]);
 

@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import CarsList from './pages/CarsList';
+import CarsList from './components/CarsList';
+import CarDetails from './components/EachCar';
 // import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/api/v1/cars" element={<CarsList />} />
+        <Route path="/api/v1/cars/:id" element={<CarDetails />} />
       </Routes>
     </div>
   );
