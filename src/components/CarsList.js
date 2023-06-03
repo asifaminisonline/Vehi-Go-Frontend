@@ -90,7 +90,7 @@ const CarsList = () => {
     ));
   };
 
-  const showRightArrow = currentIndex < Math.floor(cars.length / 3);
+  // const showRightArrow = currentIndex < Math.floor(cars.length / 3);
 
   return (
     <div>
@@ -109,7 +109,7 @@ const CarsList = () => {
           {currentPage > 1 && (<FaChevronLeft
             onClick={handlePrevious}
             size={24}
-            className=""
+            style={{ cursor: 'pointer' }}
           />)}
         </div>
         {renderCars()}
@@ -119,7 +119,7 @@ const CarsList = () => {
             <FaChevronRight
               onClick={handleNext}
               size={24}
-              className="cursor-pointer"
+              style={{ cursor: 'pointer' }}
             />
           )}
         </div>
