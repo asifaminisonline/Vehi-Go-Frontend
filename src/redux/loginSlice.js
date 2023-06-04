@@ -27,42 +27,38 @@ export const loginUser = createAsyncThunk(
     }
   },
 );
-
 const initialState = {
-    loading: false,
-    isLogin: false,
-    loginUser: [],
-    error: null,
-  };
+  loading: false,
+  isLogin: false,
+  loginUser: [],
+  error: null,
+};
 
-
-  
 const loginSlice = createSlice({
-    name: 'login',
-    initialState,
-    reducers: {},
-    extraReducers: {
-      [loginUser.pending]: (state) => ({
-        ...state,
-        loading: true,
-      }),
-      [loginUser.fulfilled]: (state, action) => ({
-        ...state,
-        loading: false,
-        isLogin: true,
-        loginUser: action.payload,
-        error: null,
-      }),
-      [loginUser.rejected]: (state, action) => ({
-        ...state,
-        loading: false,
-        isLogin: false,
-        loginUser: {},
-        error: action.payload.error,
-      }),
-    },
-  });
-  
-  export const { fetchUser } = loginSlice.actions;
-  export default loginSlice.reducer;
-  
+  name: 'login',
+  initialState,
+  reducers: {},
+  extraReducers: {
+    [loginUser.pending]: (state) => ({
+      ...state,
+      loading: true,
+    }),
+    [loginUser.fulfilled]: (state, action) => ({
+      ...state,
+      loading: false,
+      isLogin: true,
+      loginUser: action.payload,
+      error: null,
+    }),
+    [loginUser.rejected]: (state, action) => ({
+      ...state,
+      loading: false,
+      isLogin: false,
+      loginUser: {},
+      error: action.payload.error,
+    }),
+  },
+});
+
+export const { fetchUser } = loginSlice.actions;
+export default loginSlice.reducer;
