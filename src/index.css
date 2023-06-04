@@ -1,19 +1,7 @@
-body {
+
+* {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 code {
@@ -24,4 +12,34 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.login-div {
+  width:100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-position: center; 
+  background-image: url(../src/assets/carwp1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.regis-div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-position: center; 
+  background-image: url(../src/assets/car.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-login{
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0.227);
+}
+
+.ctn-form {
+  margin: 0 auto;
 }
