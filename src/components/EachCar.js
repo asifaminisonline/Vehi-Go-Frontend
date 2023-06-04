@@ -33,18 +33,40 @@ const EachCar = () => {
     <div
       className="d-flex align-items-center justify-content-center"
       style={{
+        backgroundImage: `url(${car.image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: 'rgba(0, 0, 0,)',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        minHeight: '100vh',
+        padding: '2rem',
       }}
     >
       <div
+        className="overlay"
+        style={{
+          position: 'absolute',
+          top: 80,
+          left: 0,
+          zIndex: '1',
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        }}
+      />
+      <div
         className="p-4 align-items-center justify-content-center"
         style={{
-          backgroundColor: 'rgb(211,211,211,0.3)',
+          backgroundColor: 'rgb(211,211,311,0.7)',
           justifyContent: 'center',
           alignItems: 'center',
+          zIndex: '5',
+          minHeight: '600px',
+          boxShadow: '0 0 7px 5px rgba(46, 46, 48, 0.61)',
         }}
       >
         <h4 className="text-center">{car.name}</h4>
