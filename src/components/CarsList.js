@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Url from '../api/api';
 
@@ -67,7 +68,7 @@ const CarsList = () => {
     const endIndex = startIndex + 3;
 
     return cars.slice(startIndex, endIndex).map((car) => (
-      <div
+      <Link to={`/api/v1/cars/${car.id}`}
         key={car.id}
         className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
         style={{ minWidth: '250px', maxWidth: '550px', margin: '0 auto' }}
@@ -86,7 +87,7 @@ const CarsList = () => {
             </em>
           </div>
         </div>
-      </div>
+      </Link>
     ));
   };
 
@@ -94,7 +95,7 @@ const CarsList = () => {
 
   return (
     <div>
-      <div className="text-center mx-auto" style={{ maxWidth: '768px' }}>
+      <div className="text-center mx-auto" style={{ maxWidth: '900px' }}>
         <h1 className="md:text-2xl font-sans text-base font-bold text-green-600">
           Cars
         </h1>
