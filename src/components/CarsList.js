@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Url from '../api/api';
 
@@ -68,10 +68,17 @@ const CarsList = () => {
     const endIndex = startIndex + 3;
 
     return cars.slice(startIndex, endIndex).map((car) => (
-      <Link to={`/api/v1/cars/${car.id}`}
+      <Link
+        to={`/api/v1/cars/${car.id}`}
         key={car.id}
         className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
-        style={{ minWidth: '250px', maxWidth: '550px', margin: '0 auto' }}
+        style={{
+          minWidth: '250px',
+          maxWidth: '550px',
+          margin: '0 auto',
+          textDecoration: 'none',
+          color: 'black',
+        }}
       >
         <img src={car.image} alt={car.name} className="img-fluid mb-2 " />
         <div>
@@ -94,7 +101,7 @@ const CarsList = () => {
   // const showRightArrow = currentIndex < Math.floor(cars.length / 3);
 
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: '100vh', }}>
       <div className="text-center mx-auto" style={{ maxWidth: '900px' }}>
         <h1 className="md:text-2xl font-sans text-base font-bold text-green-600">
           Cars
@@ -107,11 +114,13 @@ const CarsList = () => {
         style={{ maxWidth: '100vw', display: 'flex' }}
       >
         <div className="d-flex flex-column justify-content-center">
-          {currentPage > 1 && (<FaChevronLeft
-            onClick={handlePrevious}
-            size={24}
-            style={{ cursor: 'pointer' }}
-          />)}
+          {currentPage > 1 && (
+            <FaChevronLeft
+              onClick={handlePrevious}
+              size={24}
+              style={{ cursor: 'pointer' }}
+            />
+          )}
         </div>
         {renderCars()}
         <div className="d-flex flex-column justify-content-center">

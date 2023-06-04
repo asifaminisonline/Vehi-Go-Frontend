@@ -30,12 +30,19 @@ const CarDetails = () => {
 
   console.log('Rendered car:', car);
   return (
-    <div className="d-flex align-items-center justify-content-center">
+    <div
+      className="d-flex align-items-center justify-content-center"
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
       <div
         className="p-4 align-items-center justify-content-center"
         style={{
           backgroundColor: 'rgb(211,211,211,0.3)',
-          // maxWidth: '1080px',
           justifyContent: 'center',
           alignItems: 'center',
         }}
