@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { showCar } from './CarsList';
 
-const CarDetails = () => {
+const EachCar = () => {
   const { id } = useParams();
   const [car, setCar] = useState(null);
 
@@ -104,4 +104,4 @@ const CarDetails = () => {
   );
 };
 
-export default CarDetails;
+export default EachCar;
