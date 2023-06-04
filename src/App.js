@@ -1,6 +1,7 @@
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
-import Login from './pages/auth/login';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
 import './App.css';
 
 function App() {
@@ -8,9 +9,9 @@ function App() {
     <div className="App">
       <Toaster />
       <Routes>
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-      <Login />
     </div>
   );
 }

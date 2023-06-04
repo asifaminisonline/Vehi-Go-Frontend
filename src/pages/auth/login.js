@@ -1,8 +1,10 @@
+/* eslint-disable max-len */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { loginUser } from '../../redux/LoginSlice';
+import { loginUser } from '../../redux/loginSlice';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -10,10 +12,11 @@ const Login = () => {
 
   const [data, setData] = useState({
     name: '',
+    email: '',
     password: '',
   });
 
-  const { name, password } = data;
+  const { name, email, password } = data;
 
   const userData = {
     user: data,
@@ -34,6 +37,7 @@ const Login = () => {
         navigate('/');
         setData({
           name: '',
+          email: '',
           password: '',
         });
       } else {
@@ -45,90 +49,79 @@ const Login = () => {
   return (
 
     <div className=" justify-content-center align-items-center login-div ">
-      <div className="form-login p-3 rounded-3">
+      <div className="form-login p-3 rounded-3 mx-5">
         <div className="container text-center px-5 mb-3 text-white">
           <h1>Sign In</h1>
           <p className=" mt-3">hello there! Sign in and start managing your system</p>
         </div>
-        <div className=" ctn-form ">
-
-          {/* <form className="mt-6" onSubmit={handleSubmit}>
-          <div className="mb-2 form-floating ">
-            <label
-              htmlFor="name"
-              className="form-control d-block"
-            >
-              Username
-            </label>
-            <input
-              id="name"
-              type="text"
-              className="form-control d-block"
-              name="name"
-              value={name}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-2">
-            <label
-              htmlFor="password"
-              className="form-control d-block"
-            >
-              Password
-            </label>
-            <input
-              name="password"
-              value={password}
-              onChange={handleChange}
-              id="password"
-              type="password"
-              className="form-control d-block"
-            />
-          </div>
-          <div className="mt-6">
-            <button
-              type="submit"
-              className="btn btn-primary"
-            >
-              Login Now
-            </button>
-          </div>
-          <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
-            Dont have an account?
-            <Link
-              to="/register"
-              className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
-            >
-              Register here
-            </Link>
-          </p>
-        </form> */}
-
-          <form className="text-white">
-
-            <div className="mb-3">
-              <label htmlFor="name" className="form-label">
+        <div className=" ctn-form  text-white">
+          <form className="mt-6" onSubmit={handleSubmit}>
+            <div className="mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm mb-2"
+              >
                 Username
               </label>
               <input
+                id="name"
                 type="text"
                 className="form-control rounded-pill"
-                id="name"
-                placeholder="Enter your username"
+                name="name"
+                value={name}
+                onChange={handleChange}
+
               />
             </div>
-            <div className="form-group mt-3">
-              <label htmlFor="email" className="form-label ">
-                Email address
+            <div className="mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm mb-2"
+              >
+                Email
               </label>
               <input
+                id="email"
                 type="email"
                 className="form-control rounded-pill"
-                id="email"
-                placeholder="name@example.com"
+                name="email"
+                value={email}
+                onChange={handleChange}
               />
             </div>
-            <button className="btn btn-primary rounded-pill mt-3 px-3"> Sigin in</button>
+            <div className="mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-semibold mb-2"
+              >
+                Password
+              </label>
+              <input
+                name="password"
+                value={password}
+                onChange={handleChange}
+                id="password"
+                type="password"
+                className="form-control rounded-pill"
+              />
+            </div>
+            <div className="mt-6">
+              <button
+                type="submit"
+                className="btn btn-primary mt-3"
+              >
+                Login Now
+              </button>
+            </div>
+            <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
+              Dont have an account?
+              <Link
+                to="/register"
+                className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
+              >
+                Register here
+              </Link>
+            </p>
           </form>
 
         </div>
