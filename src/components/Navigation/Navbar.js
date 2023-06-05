@@ -1,7 +1,7 @@
 /* eslint-disable */
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
+// import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
@@ -9,7 +9,26 @@ import './Navbar.css';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebar(false);
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+  const showSidebar = (event) => {
+    event.stopPropagation();
+    setSidebar(!sidebar);
+  };
 
   return (
     <>
@@ -28,15 +47,15 @@ function Navbar() {
             zIndex: '7',
           }}
         >
-          <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
+          <Link to="#" className="menu-bars" onClick={showSidebar}>
+            <FaIcons.FaBars />
           </Link>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} style={{ zIndex: '10', }}>
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} style={{ zIndex: '10', }} ref={sidebarRef}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="/api/v1/cars" className="menu-bars">
-                <AiIcons.AiOutlineClose />
+                {/* <AiIcons.AiOutlineClose /> */}
               </Link>
             </li>
             {SidebarData.map((item, index) => {
