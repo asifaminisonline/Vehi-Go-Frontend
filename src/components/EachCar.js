@@ -10,7 +10,6 @@ const CarDetails = () => {
   useEffect(() => {
     const getCar = async () => {
       const carData = await showCar(id);
-      console.log('Fetched car:', carData);
       setCar(carData);
     };
     getCar();
@@ -28,7 +27,6 @@ const CarDetails = () => {
     return <div>Loading...</div>;
   }
 
-  console.log('Rendered car:', car);
   return (
     <div
       className="d-flex align-items-center justify-content-center"
