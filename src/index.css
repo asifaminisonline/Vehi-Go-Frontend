@@ -15,11 +15,11 @@ code {
 }
 
 .login-div {
-  width:100%;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-position: center; 
+  background-position: center;
   background-image: url(../src/assets/carwp1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,12 +30,13 @@ code {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-position: center; 
+  background-position: center;
   background-image: url(../src/assets/car.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.form-login{
+
+.form-login {
   border: 1px solid #fff;
   background-color: rgba(255, 255, 255, 0.227);
 }
