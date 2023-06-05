@@ -1,17 +1,18 @@
+// import logo from './logo.svg';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-import NewCar from './pages/NewCar';
+import { Routes, Route } from 'react-router-dom';
+import CarsList from './components/CarsList';
+import CarDetails from './components/EachCar';
+// import './App.css';
 
 function App() {
   return (
-    <main className="App">
-      <Router>
-        <Routes>
-          <Route path="/new_car" element={<NewCar />} />
-        </Routes>
-      </Router>
-    </main>
+    <div className="App">
+      <Routes>
+        <Route path="/api/v1/cars" element={<CarsList />} />
+        <Route path="/api/v1/cars/:id" element={<CarDetails />} />
+      </Routes>
+    </div>
   );
 }
 
