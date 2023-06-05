@@ -25,7 +25,6 @@ const NewCar = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(carData);
     if (!IMAGE_REGEX.test(carData.image)) {
       alert('invaild image url');
     }
