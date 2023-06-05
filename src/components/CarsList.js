@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -21,18 +20,32 @@ const CarsList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
+  // Dispaly cars based on the screen size
+  const getNumCarsPerPage = () => {
+    if (window.innerWidth >= 1024) {
+      return 3;
+    } if (window.innerWidth >= 768) {
+      return 2;
+    }
+    return 1;
+  };
+
   useEffect(() => {
     const getCars = async () => {
       try {
         const response = await axios.get(`${Url}/api/v1/cars`);
         setCars(response.data);
-        setTotalPages(Math.ceil(response.data.length / 3));
+        setTotalPages(Math.ceil(response.data.length / getNumCarsPerPage()));
       } catch (error) {
         console.error('Error fetching cars:', error);
       }
     };
     getCars();
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [totalPages]);
 
   // Display current page and number of pages
   const handlePreviousPage = () => {
@@ -64,8 +77,9 @@ const CarsList = () => {
   };
 
   const renderCars = () => {
-    const startIndex = currentIndex * 3;
-    const endIndex = startIndex + 3;
+    const numCarsPerPage = getNumCarsPerPage();
+    const startIndex = currentIndex * numCarsPerPage;
+    const endIndex = startIndex + numCarsPerPage;
 
     return cars.slice(startIndex, endIndex).map((car) => (
       <Link
@@ -73,7 +87,7 @@ const CarsList = () => {
         key={car.id}
         className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
         style={{
-          minWidth: '250px',
+          minWidth: '350px',
           maxWidth: '550px',
           margin: '0 auto',
           textDecoration: 'none',
@@ -88,7 +102,10 @@ const CarsList = () => {
             </p>
           </div>
           <div className="text-center">
-            <span>${parseFloat(car.price).toFixed(2)}</span>
+            <span>
+              $
+              {parseFloat(car.price).toFixed(2)}
+            </span>
             <em>
               <b>&nbsp;per day</b>
             </em>
@@ -101,7 +118,7 @@ const CarsList = () => {
   // const showRightArrow = currentIndex < Math.floor(cars.length / 3);
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: '100vh', }}>
+    <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: '100vh' }}>
       <div className="text-center mx-auto" style={{ maxWidth: '900px' }}>
         <h1 className="md:text-2xl font-sans text-base font-bold text-green-600">
           Cars
@@ -135,7 +152,9 @@ const CarsList = () => {
         </div>
       </div>
       <div className="text-center mt-2">
-        {currentPage}/{totalPages}
+        {currentPage}
+        /
+        {totalPages}
       </div>
     </div>
   );
