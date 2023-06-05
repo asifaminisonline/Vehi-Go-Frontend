@@ -1,24 +1,4 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-// import React from 'react';
-
-// const Register = () => {
-//   const handleSubmit = () => {
-//     console.log('bar');
-//   };
-
-//   return (
-
-//     <>
-//       <h1>
-//         hELLO THERE
-//       </h1>
-//       <button type="submit" onClick={handleSubmit}> click here</button>
-//     </>
-//   );
-// };
-
-// export default Register;
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -60,8 +40,6 @@ const Register = () => {
         password,
       },
     };
-
-    console.log(finalData);
 
     dispatch(registerUser(finalData));
     toast.success("You're registered successfully");
