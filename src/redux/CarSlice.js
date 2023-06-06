@@ -48,7 +48,7 @@ const carSlice = createSlice({
       .addCase(getCars.fulfilled, (state, action) => ({
         ...state,
         loading: false,
-        message: action.payload.messaage,
+        message: action.payload.message,
         error: null,
       }))
       .addCase(getCars.rejected, (state, action) => ({
