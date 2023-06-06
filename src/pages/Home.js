@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
