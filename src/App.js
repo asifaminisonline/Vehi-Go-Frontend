@@ -5,6 +5,7 @@ import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import CarsList from './components/CarsList';
 import CarDetails from './components/EachCar';
+import NewCar from './pages/NewCar';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/register" element={<Register />} />
+        <Route path="/add-car" element={<NewCar />} />
         <Route path="/login" element={<Login />} />
         <Route path="/api/v1/cars" element={<CarsList />} />
         <Route path="/api/v1/cars/:id" element={<CarDetails />} />

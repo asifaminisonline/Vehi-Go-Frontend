@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useState } from "react";
 // import Navbar from '../components/Navbar';
-import './styles/newCar.css';
+import "./styles/newCar.css";
 
 const IMAGE_REGEX = /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/i;
 
 const NewCar = () => {
   const [carData, setCarData] = useState({
-    name: '',
-    color: '',
-    price: '',
-    description: '',
-    image: '',
-    created_at: '',
-    updated_at: '',
+    name: "",
+    color: "",
+    price: "",
+    description: "",
+    image: "",
+    created_at: "",
+    updated_at: "",
   });
 
   function handleChange(e) {
@@ -26,7 +26,7 @@ const NewCar = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (!IMAGE_REGEX.test(carData.image)) {
-      alert('invaild image url');
+      alert("invaild image url");
     }
     // Do something with the carData, e.g. submit it to a server
   }
@@ -94,7 +94,7 @@ const NewCar = () => {
                 />
               </label>
 
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Add Car" />
             </form>
           </div>
         </div>
