@@ -38,6 +38,18 @@ const CarDetails = () => {
       }}
     >
       <div
+        className="overlay"
+        style={{
+          position: 'absolute',
+          // top: 80,
+          left: 0,
+          zIndex: '1',
+          width: '100%',
+          height: '100vh',
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        }}
+      />
+      <div
         className="p-4 align-items-center justify-content-center"
         style={{
           backgroundColor: 'rgb(211,211,211,0.3)',
