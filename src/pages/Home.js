@@ -121,7 +121,7 @@ const CarsList = () => {
   // const showRightArrow = currentIndex < Math.floor(cars.length / 3);
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center" style={{ height: '100vh' }}>
+    <div className="d-flex flex-column align-items-center justify-content-center home-div" style={{ height: '100vh' }}>
       <div className="text-center mx-auto" style={{ maxWidth: '900px' }}>
         <h1 className="md:text-2xl font-sans text-base font-bold text-green-600">
           Cars
