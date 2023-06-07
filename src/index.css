@@ -44,3 +44,9 @@ code {
 .ctn-form {
   margin: 0 auto;
 }
+
+.home-div {
+  background-image: url(../src/assets/bg02.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
