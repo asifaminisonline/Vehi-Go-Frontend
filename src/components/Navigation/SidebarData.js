@@ -13,7 +13,7 @@ export const SidebarData = [
   },
   {
     title: 'Add Car',
-    path: '',
+    path: '/api/v1/cars/new',
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text',
   },
