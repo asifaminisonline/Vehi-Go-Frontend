@@ -39,23 +39,21 @@ export const getCars = createAsyncThunk(
 const carSlice = createSlice({
   name: 'car',
   initialState,
-  extraReducers(builder) {
+  reducers: {},
+  extraReducers: (builder) => {
     builder
-      .addCase(getCars.pending, (state) => ({
-        ...state,
-        loading: true,
-      }))
-      .addCase(getCars.fulfilled, (state, action) => ({
-        ...state,
-        loading: false,
-        message: action.payload.message,
-        error: null,
-      }))
-      .addCase(getCars.rejected, (state, action) => ({
-        ...state,
-        loading: false,
-        error: action.payload.error,
-      }));
+      .addCase(getCars.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getCars.fulfilled, (state, action) => {
+        state.loading = false;
+        state.data = action.payload;
+      })
+      .addCase(getCars.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.message;
+      });
   },
 });
 
