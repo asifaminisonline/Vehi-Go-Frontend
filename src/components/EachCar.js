@@ -31,10 +31,17 @@ const CarDetails = () => {
     <div
       className="d-flex align-items-center justify-content-center"
       style={{
+        backgroundImage: `url(${car.image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: 'rgba(0, 0, 0,)',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        minHeight: '100vh',
+        padding: '2rem',
       }}
     >
       <div
