@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useMediaQuery } from 'react-responsive';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCars } from '../redux/CarSlice';
@@ -13,13 +14,18 @@ const CarsList = () => {
   const [totalPages, setTotalPages] = useState(1);
 
   // Dispaly cars based on the screen size
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
+  const isMobile = useMediaQuery({ maxDeviceWidth: 767 });
+
   const getNumCarsPerPage = () => {
-    if (window.innerWidth >= 1024) {
+    if (isDesktop) {
       return 3;
-    } if (window.innerWidth >= 768) {
+    } if (isTablet) {
       return 2;
-    }
+    } else if (isMobile) {
     return 1;
+  }
   };
 
   useEffect(() => {
