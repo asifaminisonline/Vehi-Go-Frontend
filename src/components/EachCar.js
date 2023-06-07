@@ -59,9 +59,12 @@ const CarDetails = () => {
       <div
         className="p-4 align-items-center justify-content-center"
         style={{
-          backgroundColor: 'rgb(211,211,211,0.3)',
+          backgroundColor: 'rgb(211,211,311,0.7)',
           justifyContent: 'center',
           alignItems: 'center',
+          zIndex: '5',
+          minHeight: '600px',
+          boxShadow: '0 0 7px 5px rgba(46, 46, 48, 0.61)',
         }}
       >
         <h4 className="text-center">{car.name}</h4>
@@ -105,16 +108,16 @@ const CarDetails = () => {
                 &nbsp; per day
               </b>
             </p>
-            <div style={{ buttonStyle }}>
-              <button
-                type="button"
-                style={{ width: '100%' }}
-                className="btn btn-primary w-100 mt-5 text-center"
-              >
-                ADD TO FAVORITES
-              </button>
-            </div>
           </div>
+        </div>
+        <div className="text-center" style={{ width: '100%' }}>
+          <button
+            type="button"
+            className="btn btn-primary mt-5"
+            style={{ display: 'inline-block', width: '90%' }}
+          >
+            ADD TO FAVORITES
+          </button>
         </div>
       </div>
     </div>
