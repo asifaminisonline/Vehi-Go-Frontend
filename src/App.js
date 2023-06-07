@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 import Login from './pages/auth/login';
 import Register from './pages/auth/register';
-import CarsList from './components/CarsList';
+import CarsList from './pages/Home';
 import CarDetails from './components/EachCar';
 import NewCar from './pages/NewCar';
 import './App.css';
