@@ -25,15 +25,16 @@ const CarsList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await dispatch(getCars());
+       dispatch(getCars());
       } catch (error) {
         console.error('Error fetching cars:', error);
       }
     };
+
     fetchData();
   },
 
-  [dispatch, loading]);
+  [dispatch]);
 
   useEffect(() => {
     setTotalPages(Math.ceil(cars.length / getNumCarsPerPage()));

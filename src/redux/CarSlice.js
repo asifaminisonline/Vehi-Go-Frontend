@@ -23,8 +23,8 @@ export const getCars = createAsyncThunk(
         },
       };
 
-      const { data } = await axios.get(`${Url}/api/v1/cars`, car, config);
-      return data;
+      const response = await axios.get(`${Url}/api/v1/cars`, car, config);
+      return response.data;
     } catch (error) {
       if (error.response && error.response.data && error.response.data.mesage) {
         return rejectWithValue(error.response.data.message);
@@ -52,7 +52,7 @@ const carSlice = createSlice({
       })
       .addCase(getCars.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload.message;
+        state.error = action.payload;
       });
   },
 });
