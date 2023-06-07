@@ -7,7 +7,7 @@ import { getCars } from '../redux/CarSlice';
 
 const CarsList = () => {
   const dispatch = useDispatch();
-  const { loading, data: cars } = useSelector((state) => state.car);
+  const { data: cars } = useSelector((state) => state.car);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
