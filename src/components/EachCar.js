@@ -1,29 +1,19 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { showCar } from './CarsList';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCar } from '../redux/SingleCarSlice';
 
 const CarDetails = () => {
   const { id } = useParams();
-  const [car, setCar] = useState(null);
+  const dispatch = useDispatch();
+  const { loading, car }  = useSelector((state) => state.singleCar);
 
   useEffect(() => {
-    const getCar = async () => {
-      const carData = await showCar(id);
-      setCar(carData);
-    };
-    getCar();
-  }, [id]);
+    dispatch(getCar(id));
+  }, [dispatch, id]);
 
-  const buttonStyle = {
-    // display: 'flex',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // margin: '0 auto',
-    // maxWidth: '300px',
-  };
-
-  if (!car) {
+  if (loading) {
     return <div>Loading...</div>;
   }
 
@@ -48,7 +38,6 @@ const CarDetails = () => {
         className="overlay"
         style={{
           position: 'absolute',
-          // top: 80,
           left: 0,
           zIndex: '1',
           width: '100%',
