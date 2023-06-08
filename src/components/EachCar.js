@@ -7,7 +7,7 @@ import { getCar } from '../redux/SingleCarSlice';
 const CarDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { loading, car }  = useSelector((state) => state.singleCar);
+  const { loading, car } = useSelector((state) => state.singleCar);
 
   useEffect(() => {
     dispatch(getCar(id));

@@ -25,7 +25,7 @@ export const getCar = createAsyncThunk(
       const { data } = await axios.get(`${Url}/api/v1/cars/${id}`, config);
       return data;
     } catch (error) {
-      return rejectWithValue(error.response.data)
+      return rejectWithValue(error.response.data);
     }
   },
 );
