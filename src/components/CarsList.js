@@ -69,7 +69,7 @@ const CarsList = () => {
 
     return cars.slice(startIndex, endIndex).map((car) => (
       <Link
-        to={`/api/v1/cars/${car.id}`}
+        to="/car"
         key={car.id}
         className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
         style={{
