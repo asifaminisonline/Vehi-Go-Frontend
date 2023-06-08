@@ -31,7 +31,6 @@ export const getCars = createAsyncThunk(
   },
 );
 
-
 // Delete car
 export const deleteCar = createAsyncThunk(
   'Car/getCar',
@@ -83,8 +82,8 @@ const carSlice = createSlice({
       .addCase(deleteCar.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      })
+      });
   },
-})
+});
 
 export default carSlice.reducer;

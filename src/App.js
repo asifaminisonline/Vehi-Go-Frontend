@@ -5,6 +5,7 @@ import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import CarsList from './components/CarsList';
 import CarDetails from './components/EachCar';
+import DeleteCar from './pages/DeleteCar';
 import './App.css';
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/api/v1/cars" element={<CarsList />} />
-        <Route path="/api/v1/cars/:id" element={<CarDetails />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/cars" element={<CarsList />} />
+        <Route path="/car" element={<CarDetails />} />
+        <Route path="/delete" element={<DeleteCar />} />
       </Routes>
     </div>
   );

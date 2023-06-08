@@ -1,0 +1,11 @@
+.img-car {
+    width:100px;
+    height: auto;
+}
+
+.ctn-delete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
