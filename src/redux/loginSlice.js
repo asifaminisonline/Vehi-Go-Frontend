@@ -55,7 +55,7 @@ const loginSlice = createSlice({
       loading: false,
       isLogin: false,
       loginUser: {},
-      error: action.payload.error,
+      error: action.error.message,
     }),
   },
 });

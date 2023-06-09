@@ -4,7 +4,6 @@ import Url from '../api/api';
 
 const initialState = {
   loading: true,
-  data: [],
   message: '',
   error: null,
   car: {},
@@ -12,9 +11,9 @@ const initialState = {
 
 const token = localStorage.getItem('token');
 
-export const getCars = createAsyncThunk(
-  'car/getCars',
-  async (car, { rejectWithValue }) => {
+export const getCar = createAsyncThunk(
+  'car/getCar',
+  async (id, { rejectWithValue }) => {
     try {
       const config = {
         headers: {
@@ -23,38 +22,35 @@ export const getCars = createAsyncThunk(
         },
       };
 
-      const response = await axios.get(`${Url}/api/v1/cars`, car, config);
-      return response.data;
+      const { data } = await axios.get(`${Url}/api/v1/cars/${id}`, config);
+      return data;
     } catch (error) {
-      if (error.response && error.response.data && error.response.data.message) {
-        return rejectWithValue(error.response.data.message);
-      }
-      return rejectWithValue('An error occurred while fetching cars.');
+      return rejectWithValue(error.response.data);
     }
   },
 );
 
 // Car slice
 
-const carSlice = createSlice({
-  name: 'car',
+const singleCarSlice = createSlice({
+  name: 'snglecar',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getCars.pending, (state) => {
+      .addCase(getCar.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(getCars.fulfilled, (state, action) => {
+      .addCase(getCar.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload;
+        state.car = action.payload;
       })
-      .addCase(getCars.rejected, (state, action) => {
+      .addCase(getCar.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
   },
 });
 
-export default carSlice.reducer;
+export default singleCarSlice.reducer;
