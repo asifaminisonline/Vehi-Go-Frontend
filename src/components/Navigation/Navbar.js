@@ -54,7 +54,7 @@ function Navbar() {
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} style={{ zIndex: '10', }} ref={sidebarRef}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
-              <Link to="/api/v1/cars" className="menu-bars">
+              <Link to="/cars" className="menu-bars">
                 {/* <AiIcons.AiOutlineClose /> */}
               </Link>
             </li>

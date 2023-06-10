@@ -5,12 +5,9 @@ import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import CarsList from './pages/Home';
 import CarDetails from './components/EachCar';
-<<<<<<< HEAD
 import DeleteCar from './pages/DeleteCar';
-=======
 import NewCar from './pages/NewCar';
 import Navbar from './components/Navigation/Navbar';
->>>>>>> development
 import './App.css';
 import './index.css';
 
@@ -22,9 +19,11 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/api/v1/cars" element={<CarsList />} />
-        <Route path="/api/v1/cars/:id" element={<CarDetails />} />
-        <Route path="/api/v1/cars/new" element={<NewCar />} />
+        <Route path="/cars" element={<CarsList />} />
+        <Route path="/car" element={<CarDetails />} />
+        <Route path="/cars/new" element={<NewCar />} />
+        <Route path="/delete" element={<DeleteCar />} />
+
       </Routes>
     </div>
   );
