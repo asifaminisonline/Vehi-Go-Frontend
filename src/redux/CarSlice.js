@@ -23,10 +23,13 @@ export const getCars = createAsyncThunk(
         },
       };
 
-      const { data } = await axios.get(`${Url}/api/v1/cars`, car, config);
-      return data;
+      const response = await axios.get(`${Url}/api/v1/cars`, car, config);
+      return response.data;
     } catch (error) {
-      return rejectWithValue(error.response.data);
+      if (error.response && error.response.data && error.response.data.message) {
+        return rejectWithValue(error.response.data.message);
+      }
+      return rejectWithValue('An error occurred while fetching cars.');
     }
   },
 );

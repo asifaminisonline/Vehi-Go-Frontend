@@ -1,29 +1,19 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { showCar } from './CarsList';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCar } from '../redux/SingleCarSlice';
 
 const CarDetails = () => {
   const { id } = useParams();
-  const [car, setCar] = useState(null);
+  const dispatch = useDispatch();
+  const { loading, car } = useSelector((state) => state.singleCar);
 
   useEffect(() => {
-    const getCar = async () => {
-      const carData = await showCar(id);
-      setCar(carData);
-    };
-    getCar();
-  }, [id]);
+    dispatch(getCar(id));
+  }, [dispatch, id]);
 
-  const buttonStyle = {
-    // display: 'flex',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // margin: '0 auto',
-    // maxWidth: '300px',
-  };
-
-  if (!car) {
+  if (loading) {
     return <div>Loading...</div>;
   }
 
@@ -31,18 +21,39 @@ const CarDetails = () => {
     <div
       className="d-flex align-items-center justify-content-center"
       style={{
+        backgroundImage: `url(${car.image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: 'rgba(0, 0, 0,)',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        minHeight: '100vh',
+        padding: '2rem',
       }}
     >
       <div
+        className="overlay"
+        style={{
+          position: 'absolute',
+          left: 0,
+          zIndex: '1',
+          width: '100%',
+          height: '100vh',
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        }}
+      />
+      <div
         className="p-4 align-items-center justify-content-center"
         style={{
-          backgroundColor: 'rgb(211,211,211,0.3)',
+          backgroundColor: 'rgb(211,211,311,0.7)',
           justifyContent: 'center',
           alignItems: 'center',
+          zIndex: '5',
+          minHeight: '600px',
+          boxShadow: '0 0 7px 5px rgba(46, 46, 48, 0.61)',
         }}
       >
         <h4 className="text-center">{car.name}</h4>
@@ -86,16 +97,16 @@ const CarDetails = () => {
                 &nbsp; per day
               </b>
             </p>
-            <div style={{ buttonStyle }}>
-              <button
-                type="button"
-                style={{ width: '100%' }}
-                className="btn btn-primary w-100 mt-5 text-center"
-              >
-                ADD TO FAVORITES
-              </button>
-            </div>
           </div>
+        </div>
+        <div className="text-center" style={{ width: '100%' }}>
+          <button
+            type="button"
+            className="btn btn-primary mt-5"
+            style={{ display: 'inline-block', width: '90%' }}
+          >
+            ADD TO FAVORITES
+          </button>
         </div>
       </div>
     </div>
