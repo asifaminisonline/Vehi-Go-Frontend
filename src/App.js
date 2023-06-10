@@ -6,11 +6,13 @@ import Register from './pages/auth/register';
 import CarsList from './pages/Home';
 import CarDetails from './components/EachCar';
 import NewCar from './pages/NewCar';
+import Navbar from './components/Navigation/Navbar';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Toaster />
       <Routes>
         <Route path="/register" element={<Register />} />

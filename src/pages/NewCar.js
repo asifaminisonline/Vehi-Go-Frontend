@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 // import Navbar from '../components/Navbar';
 import './styles/newCar.css';
 
@@ -26,6 +26,7 @@ const NewCar = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (!IMAGE_REGEX.test(carData.image)) {
+    // eslint-disable-next-line
       alert('invaild image url');
     }
     // Do something with the carData, e.g. submit it to a server
