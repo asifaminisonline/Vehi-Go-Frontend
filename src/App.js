@@ -7,6 +7,7 @@ import CarsList from './components/CarsList';
 import CarDetails from './components/EachCar';
 import DeleteCar from './pages/DeleteCar';
 import './App.css';
+import './index.css';
 
 function App() {
   return (

@@ -1,7 +1,21 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-* {
+body {
   margin: 0;
-  padding: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
 }
 
 code {
@@ -12,6 +26,83 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.ant-layout-sider {
+  background-color: white !important;
+  color: black !important;
+}
+
+.ant-menu {
+  background-color: white !important;
+  color: black !important;
+}
+
+.ant-menu-item {
+  background-color: white !important;
+  color: black !important;
+  align-items: center !important;
+}
+
+.ant-menu-item:hover {
+  background-color: #97bf11 !important;
+  color: white !important;
+}
+
+.ant-menu-item-active {
+  background-color: #97bf11 !important;
+  color: white !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .ant-layout-sider {
+    width: min-content !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .ant-layout-sider {
+    max-width: 100px !important;
+    min-width: 100px !important;
+    width: 80px !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ant-menu-title-content {
+    font-size: 9px !important;
+  }
+}
+
+@media (max-width: 414px) {
+  .ant-layout-sider {
+    max-width: 40px !important;
+    min-width: 40px !important;
+    width: 40px !important;
+  }
+
+  .ant-menu-item {
+    justify-content: center !important;
+    align-items: center !important;
+    flex: 0 0 50px !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .login-div {
