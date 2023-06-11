@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCars } from '../redux/CarSlice';
+import './styles/home.css';
 
 const CarsList = () => {
   const dispatch = useDispatch();
@@ -86,7 +87,7 @@ const CarsList = () => {
 
     return cars.slice(startIndex, endIndex).map((car) => (
       <Link
-        to={`/api/v1/cars/${car.id}`}
+        to="/car"
         key={car.id}
         className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
         style={{
@@ -117,11 +118,26 @@ const CarsList = () => {
       </Link>
     ));
   };
+  const sytleCtn = {
+    paddingTop: '10rem',
+    height: '100vh'
+  };
 
   // const showRightArrow = currentIndex < Math.floor(cars.length / 3);
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center home-div" style={{ height: '100vh' }}>
+    <div className="d-flex flex-column align-items-center home-div " style={sytleCtn}>
+      <div className="banner flex items-center ">
+        <div className="img-banner"> 
+          
+        </div>
+        <div> 
+        <h1> Rent your car by an easiest way </h1>
+          <p>100 luxury cars from multi brand are available for you</p>
+        </div>
+        
+        
+      </div>
       <div className="text-center mx-auto" style={{ maxWidth: '900px' }}>
         <h1 className="md:text-2xl font-sans text-base font-bold text-green-600">
           Cars
