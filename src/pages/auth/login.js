@@ -110,7 +110,8 @@ const Login = () => {
                 type="submit"
                 className="btn btn-primary mt-3"
               >
-                Login Now
+                <Link to="/cars"> Login Now </Link>
+
               </button>
             </div>
             <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
