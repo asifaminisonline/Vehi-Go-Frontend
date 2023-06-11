@@ -7,19 +7,19 @@ import * as IoIcons from 'react-icons/io';
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/api/v1/cars',
+    path: '/cars',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text',
   },
   {
     title: 'Add Car',
-    path: '/api/v1/cars/new',
+    path: '/cars/new',
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text',
   },
   {
     title: 'Remove Car',
-    path: '',
+    path: '/delete',
     icon: <FaIcons.FaTrash />,
     cName: 'nav-text',
   },
