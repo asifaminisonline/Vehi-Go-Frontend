@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
@@ -110,7 +110,8 @@ const Login = () => {
                 type="submit"
                 className="btn btn-primary mt-3"
               >
-                Login Now
+                <Link to="/cars"> Login Now </Link>
+
               </button>
             </div>
             <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
