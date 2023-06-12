@@ -1,19 +1,16 @@
-import { Toaster } from 'react-hot-toast';
-import { Route, Routes } from 'react-router-dom';
-import React from 'react';
-import Login from './pages/auth/login';
-import Register from './pages/auth/register';
-import CarsList from './pages/Home';
-import CarDetails from './components/EachCar';
-<<<<<<< HEAD
-import NewCar from './pages/NewCar';
-=======
-import DeleteCar from './pages/DeleteCar';
-import NewCar from './pages/NewCar';
-import Navbar from './components/Navigation/Navbar';
->>>>>>> development
-import './App.css';
-import './index.css';
+import { Toaster } from "react-hot-toast";
+import { Route, Routes } from "react-router-dom";
+import React from "react";
+import Login from "./pages/auth/login";
+import Register from "./pages/auth/register";
+import CarsList from "./pages/Home";
+import CarDetails from "./components/EachCar";
+import NewCar from "./pages/NewCar";
+import DeleteCar from "./pages/DeleteCar";
+import NewCar from "./pages/NewCar";
+import Navbar from "./components/Navigation/Navbar";
+import "./App.css";
+import "./index.css";
 
 function App() {
   return (
@@ -28,7 +25,6 @@ function App() {
         <Route path="/car" element={<CarDetails />} />
         <Route path="/cars/new" element={<NewCar />} />
         <Route path="/delete" element={<DeleteCar />} />
-
       </Routes>
     </div>
   );
