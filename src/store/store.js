@@ -9,7 +9,7 @@ export default configureStore({
     register: registerReducer,
     login: loginReducer,
     car: carReducer,
-    singleCar: singleCarReducer,
+    singlecar: singleCarReducer,
   },
   // middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 });
