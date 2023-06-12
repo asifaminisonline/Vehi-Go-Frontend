@@ -1,5 +1,23 @@
+
 .img-banner {
+  padding: 12rem;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('/src/assets/urus.png');
+  background-size: contain;
+  width: 60%;
+}
+
+
+.img-ca {
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-image: url('/src/assets/abs.png'); */
+  background-size: contain;
+}
+
+.ctn-del {
+  height: 100vh;
+  width: 100%;
+  height: 100vh;
 }

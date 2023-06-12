@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCars } from '../redux/CarSlice';
+import Banner from '../components/banner';
 import './styles/home.css';
 
 const CarsList = () => {
@@ -87,7 +88,7 @@ const CarsList = () => {
 
     return cars.slice(startIndex, endIndex).map((car) => (
       <Link
-        to="/car"
+        to={`/cars/${car.id}`}
         key={car.id}
         className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
         style={{
@@ -120,34 +121,26 @@ const CarsList = () => {
   };
   const sytleCtn = {
     paddingTop: '10rem',
-    height: '100vh'
+    height: '100vh',
+    gap: '1rem'
   };
 
   // const showRightArrow = currentIndex < Math.floor(cars.length / 3);
 
   return (
     <div className="d-flex flex-column align-items-center home-div " style={sytleCtn}>
-      <div className="banner flex items-center ">
-        <div className="img-banner"> 
-          
-        </div>
-        <div> 
-        <h1> Rent your car by an easiest way </h1>
-          <p>100 luxury cars from multi brand are available for you</p>
-        </div>
-        
-        
-      </div>
-      <div className="text-center mx-auto" style={{ maxWidth: '900px' }}>
+      <Banner />
+      <div className="text-center mx-auto">
         <h1 className="md:text-2xl font-sans text-base font-bold text-green-600">
-          Cars
+          Features Cars
         </h1>
-        <hr className="md:w-28 w-16 md:border-2 border-1 border-green-600" />
+        <h4 className=" font-light ">You may fall in love, we got your taste  </h4>
+        <div className=" mx-auto mt-3 w-24 h-1.5 text-center bg-orange" />
       </div>
 
       <div
         className="flex items-center justify-between mx-2 p-5 md:scale-90 mt-2 gap-4"
-        style={{ maxWidth: '100vw', display: 'flex' }}
+        style={{ display: 'flex' }}
       >
         <div className="d-flex flex-column justify-content-center">
           {currentPage > 1 && (

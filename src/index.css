@@ -136,6 +136,18 @@ code {
   margin: 0 auto;
 }
 
+.details {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/src/assets/abss.png') !important;
+  background-position: center;
+  background-position: no-repeat;
+  background-size: contain;
+  
+}
+
+
+
 /* .home-div {
   width: 100%;
   height: 100vh;
