@@ -1,34 +1,17 @@
-import { useState } from "react";
+import React from 'react';
 // import Navbar from '../components/Navbar';
-import "./styles/newCar.css";
-
-const IMAGE_REGEX = /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/i;
+import './styles/newCar.css';
 
 const NewCar = () => {
-  const [carData, setCarData] = useState({
-    name: "",
-    color: "",
-    price: "",
-    description: "",
-    image: "",
-    created_at: "",
-    updated_at: "",
-  });
-
   function handleChange(e) {
     const { name, value } = e.target;
-    setCarData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    // Do something with the form data
+    console.log(`Field '${name}' changed to '${value}'`);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!IMAGE_REGEX.test(carData.image)) {
-      alert("invaild image url");
-    }
-    // Do something with the carData, e.g. submit it to a server
+    // Do something with the form data, e.g. submit it to a server
   }
 
   return (
@@ -40,12 +23,12 @@ const NewCar = () => {
             <form onSubmit={handleSubmit} className="new-car-form">
               <h2>Car Details</h2>
 
-              <label htmlFor="image-url">
+              <label htmlFor="image">
                 Image URL:
                 <input
                   type="text"
-                  id="image-url"
-                  name="image-url"
+                  id="image"
+                  name="image"
                   required
                   onChange={handleChange}
                 />
@@ -94,7 +77,7 @@ const NewCar = () => {
                 />
               </label>
 
-              <input type="submit" value="Add Car" />
+              <input type="submit" value="Submit" />
             </form>
           </div>
         </div>
