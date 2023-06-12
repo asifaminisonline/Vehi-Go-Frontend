@@ -1,16 +1,15 @@
-import { Toaster } from "react-hot-toast";
-import { Route, Routes } from "react-router-dom";
-import React from "react";
-import Login from "./pages/auth/login";
-import Register from "./pages/auth/register";
-import CarsList from "./pages/Home";
-import CarDetails from "./components/EachCar";
-import NewCar from "./pages/NewCar";
-import DeleteCar from "./pages/DeleteCar";
-import NewCar from "./pages/NewCar";
-import Navbar from "./components/Navigation/Navbar";
-import "./App.css";
-import "./index.css";
+import { Toaster } from 'react-hot-toast';
+import { Route, Routes } from 'react-router-dom';
+import React from 'react';
+import Login from './pages/auth/login';
+import Register from './pages/auth/register';
+import CarsList from './pages/Home';
+import CarDetails from './components/EachCar';
+import NewCar from './pages/NewCar';
+import DeleteCar from './pages/DeleteCar';
+import Navbar from './components/Navigation/Navbar';
+import './App.css';
+import './index.css';
 
 function App() {
   return (
