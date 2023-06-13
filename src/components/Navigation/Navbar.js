@@ -38,7 +38,7 @@ function Navbar() {
           style={{
             backgroundColor: '#060b26',
             position: 'fixed',
-            height: '80px',
+          
             width: '100%',
             display: 'flex',
             justifyContent: 'start',

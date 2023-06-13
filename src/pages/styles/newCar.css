@@ -119,3 +119,12 @@
     font-size: 20px;
   }
 }
+
+.img-form {
+  padding: 12rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/src/assets/dodge.jpg');
+  background-size: cover;
+  width: 40%;
+}
