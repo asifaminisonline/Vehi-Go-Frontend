@@ -16,7 +16,7 @@ const SidebarData2 = [
   {
     path: '/delete',
     icon: <FaIcons.FaTrash className="icon" />,
-    title: 'Delete',
+    title: 'Delete car',
   },
   {
     path: '',
