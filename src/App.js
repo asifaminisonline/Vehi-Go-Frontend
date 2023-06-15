@@ -19,8 +19,8 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<CarsList />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/cars" element={<CarsList />} />
         <Route path="/cars/:id" element={<CarDetails />} />
         <Route path="/cars/new" element={<NewCar />} />
         <Route path="/delete" element={<DeleteCar />} />

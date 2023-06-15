@@ -59,4 +59,11 @@
     width: 60%;
     margin: 0 auto;
   }
+  .img-fav {
+    width: 100% !important;
+  }
+  
+  .ctn-del {
+    padding: 1rem;;
+  }
 }

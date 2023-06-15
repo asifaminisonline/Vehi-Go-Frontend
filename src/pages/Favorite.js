@@ -11,7 +11,8 @@ const Favorite = () => {
   useEffect(() => {
     dispatch(getFavorite(userId));
   }, [dispatch, userId]);
-
+  
+  console.log()
   const favouriteData = useSelector((state) => state.favorite);
   return (
     <div>
