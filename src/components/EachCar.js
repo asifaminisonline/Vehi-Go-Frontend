@@ -10,8 +10,8 @@ const CarDetails = () => {
   console.log(id);
   const dispatch = useDispatch();
   // const { loading, car } = useSelector((state) => state.singleCar);
-  const car = useSelector((state) => state.singleCar.car);
-  const loading = useSelector((state) => state.singleCar.loading);
+  const car = useSelector((state) => state.singlecar.car);
+  const loading = useSelector((state) => state.singlecar.loading);
 
   useEffect(() => {
     dispatch(getCar(id));
