@@ -93,14 +93,13 @@ const CarsList = () => {
         key={car.id}
         className="d-flex flex-column border mb-4 justify-content-center  p-1 pb-5"
         style={{
-          minWidth: '350px',
           maxWidth: '550px',
           margin: '0 auto',
           textDecoration: 'none',
           color: 'black',
         }}
       >
-        <div className="w-100">
+        <div className="w-100 car">
 
         <img src={car.image} alt={car.name} className="w-100 mb-2 h-48" />
         </div>
@@ -148,13 +147,12 @@ const CarsList = () => {
         <h1 className="md:text-2xl font-sans text-base font-bold text-green-600">
           Features Cars
         </h1>
-        <h4 className=" font-light ">You may fall in love, we got your taste  </h4>
+        <h4 className=" font-light text-feature text-center ">You may fall in love, we got your taste  </h4>
         <div className=" mx-auto mt-3 w-24 h-1.5 text-center bg-orange" />
       </div>
 
       <div
-        className="flex items-center justify-between mx-2 p-5 md:scale-90 mt-2 gap-2"
-        style={{ display: 'flex' }}
+        className="container flex items-center justify-between mt-2 p-3 gap-2"
       >
         <div className="d-flex flex-column justify-content-center">
           {currentPage > 1 && (

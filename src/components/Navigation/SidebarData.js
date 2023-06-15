@@ -25,7 +25,7 @@ export const SidebarData = [
   },
   {
     title: 'My Favorites',
-    path: '',
+    path: '/favorite',
     icon: <FaIcons.FaHeart />,
     cName: 'nav-text',
   },

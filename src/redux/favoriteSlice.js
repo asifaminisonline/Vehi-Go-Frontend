@@ -10,10 +10,10 @@ const initialState = {
 };
 
 const token = localStorage.getItem('token');
-
+const id = localStorage.getItem('userId');
 export const addFavorite = createAsyncThunk(
   'reserved/addFavorite',
-  async (tutor, { rejectWithValue }) => {
+  async (reservation, { rejectWithValue }) => {
     try {
       const config = {
         headers: {
@@ -21,7 +21,7 @@ export const addFavorite = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       };
-      const { data } = await axios.post(`${Url}api/v1/reservations`, tutor, config);
+      const { data } = await axios.post(`${Url}/api/v1/users/${id}/reservations`, reservation, config);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -40,7 +40,8 @@ export const getFavorite = createAsyncThunk(
         },
       };
 
-      const { data } = await axios.get(`${Url}api/v1/reservations?user_id=${id}`, config);
+      const { data } = await axios.get(`${Url}/api/v1/users/${id}/reservations`, config);
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.response.data);
