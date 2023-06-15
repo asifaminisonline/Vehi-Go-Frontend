@@ -142,6 +142,6 @@ code {
   height: 100vh;
   background-image: url('/src/assets/abss.png') !important;
   background-position: center;
-  background-position: no-repeat;
+  background-repeat: no-repeat;
   background-size: contain;
 }
