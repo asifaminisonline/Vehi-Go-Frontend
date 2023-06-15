@@ -1,10 +1,13 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { MdMotionPhotosAuto, MdOutlineOilBarrel } from "react-icons/md";
 import { useMediaQuery } from 'react-responsive';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCars } from '../redux/CarSlice';
+import Banner from '../components/banner';
+import './styles/home.css';
 
 const CarsList = () => {
   const dispatch = useDispatch();
@@ -86,9 +89,9 @@ const CarsList = () => {
 
     return cars.slice(startIndex, endIndex).map((car) => (
       <Link
-        to={`/api/v1/cars/${car.id}`}
+        to={`/cars/${car.id}`}
         key={car.id}
-        className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
+        className="d-flex flex-column border mb-4 justify-content-center  p-1 pb-5"
         style={{
           minWidth: '350px',
           maxWidth: '550px',
@@ -97,41 +100,61 @@ const CarsList = () => {
           color: 'black',
         }}
       >
-        <img src={car.image} alt={car.name} className="img-fluid mb-2 " />
-        <div>
-          <div className="text-center">
-            <p>
+        <div className="w-100">
+
+        <img src={car.image} alt={car.name} className="w-100 mb-2 h-48" />
+        </div>
+       
+        <div className="flex flex-col gap-2 mt-2">
+          <div className="flex justify-between items-center p-2 w-100 ">
+            <p className="mb-0">
               <b>{car.name}</b>
             </p>
-          </div>
-          <div className="text-center">
-            <span>
+            <b className="text-orange">
               $
               {parseFloat(car.price).toFixed(2)}
-            </span>
-            <em>
-              <b>&nbsp;per day</b>
-            </em>
+              /Day
+            </b>
+          
+          </div>
+          <div className="flex justify-between w-100">
+            <div className="flex px-2 "> 
+            <MdMotionPhotosAuto  size={24} style={{ cursor: 'pointer', color:'#060b26' }} />
+            <span className="font-medium mx-1">Automatic</span>
+            </div>
+
+            <div className="flex px-2 "> 
+            <MdOutlineOilBarrel  size={24} style={{ cursor: 'pointer', color:'#060b26' }} />
+            <span className="font-medium mx-1">Diesel</span>
+            </div>
+           
           </div>
         </div>
       </Link>
     ));
   };
+  const sytleCtn = {
+    paddingTop: '4rem',
+    height: '100vh',
+    gap: '1rem'
+  };
 
   // const showRightArrow = currentIndex < Math.floor(cars.length / 3);
 
   return (
-    <div className="d-flex flex-column align-items-center justify-content-center home-div" style={{ height: '100vh' }}>
-      <div className="text-center mx-auto" style={{ maxWidth: '900px' }}>
+    <div className="d-flex flex-column align-items-center home-div container" style={sytleCtn}>
+      <Banner />
+      <div className="text-center mx-auto">
         <h1 className="md:text-2xl font-sans text-base font-bold text-green-600">
-          Cars
+          Features Cars
         </h1>
-        <hr className="md:w-28 w-16 md:border-2 border-1 border-green-600" />
+        <h4 className=" font-light ">You may fall in love, we got your taste  </h4>
+        <div className=" mx-auto mt-3 w-24 h-1.5 text-center bg-orange" />
       </div>
 
       <div
-        className="flex items-center justify-between mx-2 p-5 md:scale-90 mt-2 gap-4"
-        style={{ maxWidth: '100vw', display: 'flex' }}
+        className="flex items-center justify-between mx-2 p-5 md:scale-90 mt-2 gap-2"
+        style={{ display: 'flex' }}
       >
         <div className="d-flex flex-column justify-content-center">
           {currentPage > 1 && (

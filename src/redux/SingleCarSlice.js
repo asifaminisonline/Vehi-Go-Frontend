@@ -33,7 +33,7 @@ export const getCar = createAsyncThunk(
 // Car slice
 
 const singleCarSlice = createSlice({
-  name: 'snglecar',
+  name: 'singlecar',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -48,7 +48,7 @@ const singleCarSlice = createSlice({
       })
       .addCase(getCar.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload;
+        state.error = action.payload.error;
       });
   },
 });

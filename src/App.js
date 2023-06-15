@@ -8,23 +8,28 @@ import CarDetails from './components/EachCar';
 import NewCar from './pages/NewCar';
 import DeleteCar from './pages/DeleteCar';
 import Navbar from './components/Navigation/Navbar';
+import FixedNavbar from './components/Navigation/FixedNavbar';
 import './App.css';
 import './index.css';
 
 function App() {
   return (
     <div className="App">
+      <div className="fixed-navbar-container">
+        <FixedNavbar className="Fixed-navbar" />
+      </div>
       <Navbar />
-      <Toaster />
-      <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/add-car" element={<NewCar />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cars" element={<CarsList />} />
-        <Route path="/car" element={<CarDetails />} />
-        <Route path="/cars/new" element={<NewCar />} />
-        <Route path="/delete" element={<DeleteCar />} />
-      </Routes>
+      <div className="content-container">
+        <Toaster />
+        <Routes>
+          <Route path="/register" element={<Register className="The-body" />} />
+          <Route path="/login" element={<Login className="The-body" />} />
+          <Route path="/" element={<CarsList className="The-body" />} />
+          <Route path="/cars/:id" element={<CarDetails className="The-body" />} />
+          <Route path="/cars/new" element={<NewCar className="The-body" />} />
+          <Route path="/delete" element={<DeleteCar className="The-body" />} />
+        </Routes>
+      </div>
     </div>
   );
 }
