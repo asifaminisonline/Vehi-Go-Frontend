@@ -83,6 +83,7 @@ span {
 .icon {
   width: 1.8em;
   height: 1.8em;
+  margin-top: 1em;
   margin-bottom: 40px;
 }
 
@@ -95,9 +96,10 @@ span {
 .title {
   display: none;
   margin-left: 10px;
+  margin-top: 1.5em;
   background-color: #060b26;
   color: #fff;
-  height: fit-content;
+  height: 2.8em;
   padding: 0.5em;
   border: 2px solid #fff;
 }
