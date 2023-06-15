@@ -7,7 +7,6 @@ import Loading from './Loading';
 
 const CarDetails = () => {
   const { id } = useParams();
-  console.log(id);
   const dispatch = useDispatch();
   // const { loading, car } = useSelector((state) => state.singleCar);
   const car = useSelector((state) => state.singlecar.car);
