@@ -12,7 +12,7 @@ export const loginUser = createAsyncThunk(
         },
       };
       const { data } = await axios.post(`${Url}/users/sign_in`, user, config);
-
+      console.log(data);
       const {
         jti, id, name,
       } = data;

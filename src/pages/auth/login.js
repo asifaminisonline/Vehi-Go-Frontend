@@ -34,7 +34,7 @@ const Login = () => {
       const response = await dispatch(loginUser(userData));
       if (response.type === 'login/loginUser/fulfilled') {
         toast.success('logged in successfully');
-        navigate('/');
+        navigate('/cars');
         setData({
           name: '',
           email: '',
@@ -110,7 +110,7 @@ const Login = () => {
                 type="submit"
                 className="btn btn-primary mt-3"
               >
-                <Link to="/cars"> Login Now </Link>
+                Login Now
 
               </button>
             </div>

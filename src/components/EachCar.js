@@ -9,33 +9,24 @@ import Loading from './Loading';
 
 const CarDetails = () => {
   const { id } = useParams();
-  console.log(id);
   const newDate = new Date().toISOString().split('T')[0];
-  console.log(newDate);
   const user = localStorage.getItem('userId');
   const dispatch = useDispatch();
-  // const { loading, car } = useSelector((state) => state.singleCar);
+
   const car = useSelector((state) => state.singleCar.car);
   // localStorage.setItem('car', JSON.stringify(car));
-
   // const getcarStorage = localStorage.getItem('car');
   // const getcarStore = JSON.parse(getcarStorage);
   // console.log('this is car storage', getcarStorage);
-
-  console.log('this is =>', car.image);
   const loading = useSelector((state) => state.singleCar.loading);
   const fData = {
     car_id: id,
     user_id: user,
-    date: newDate,
-    // image: getcarStore.image,
-    // carname: getcarStore.name,
+    picking_date: newDate,
   };
   const resData = {
     reservation: fData,
   };
-  console.log('this is fdata =>', fData);
-  console.log(resData);
   useEffect(() => {
     dispatch(getCar(id));
   }, [dispatch, id]);

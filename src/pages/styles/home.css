@@ -28,6 +28,12 @@
 
 @media (max-width: 768px) {
 
+  .fixed-navbar-container {
+    display: none;
+  }
+  .nav-menu2 {
+    display: none;
+  }
   .banner {
     display: flex;
     flex-direction: column;

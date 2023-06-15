@@ -43,7 +43,7 @@ const Register = () => {
 
     dispatch(registerUser(finalData));
     toast.success("You're registered successfully");
-    navigate('/login');
+    navigate('/');
     setData({
       name: '',
       email: '',

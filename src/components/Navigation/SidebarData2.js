@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 
 const SidebarData2 = [
   {
-    path: '/',
+    path: '/cars',
     icon: <AiIcons.AiFillHome className="icon" />,
     title: 'Home',
   },

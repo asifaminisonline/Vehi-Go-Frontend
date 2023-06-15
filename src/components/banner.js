@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => (
 
-  <div className="banner flex  w-100 ">
+  <div className=" container banner flex  w-100 ">
 
     <div className="img-ca px-3">
       <h1 className="mb-3 uppercase"> Rent your car by an easiest way </h1>
