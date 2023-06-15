@@ -71,7 +71,7 @@ const CarsList = () => {
       <Link
         to={`/cars/${car.id}`}
         key={car.id}
-        className="d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
+        className=" car d-flex flex-column border mb-4 justify-content-center align-items-center p-1"
         style={{
           minWidth: '250px',
           maxWidth: '550px',
