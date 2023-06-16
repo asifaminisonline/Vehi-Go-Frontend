@@ -13,27 +13,25 @@ import FixedNavbar from './components/Navigation/FixedNavbar';
 import './App.css';
 import './index.css';
 
-const App = () => {
-  return (
-    <div className="App">
-      <div className="fixed-navbar-container">
-        <FixedNavbar className="Fixed-navbar" />
-      </div>
-      <Navbar />
-      <div className="content-container">
-        <Toaster />
-        <Routes>
-          <Route path="/register" element={<Register className="The-body" />} />
-          <Route path="/" element={<Login className="The-body" />} />
-          <Route path="/cars" element={<CarsList className="The-body" />} />
-          <Route path="/cars/:id" element={<CarDetails className="The-body" />} />
-          <Route path="/cars/new" element={<NewCar className="The-body" />} />
-          <Route path="/delete" element={<DeleteCar className="The-body" />} />
-          <Route path="/favorite/" element={<Favorite className="The-body" />} />
-        </Routes>
-      </div>
+const App = () => (
+  <div className="App">
+    <div className="fixed-navbar-container">
+      <FixedNavbar className="Fixed-navbar" />
     </div>
-  );
-}
+    <Navbar />
+    <div className="content-container">
+      <Toaster />
+      <Routes>
+        <Route path="/register" element={<Register className="The-body" />} />
+        <Route path="/" element={<Login className="The-body" />} />
+        <Route path="/cars" element={<CarsList className="The-body" />} />
+        <Route path="/cars/:id" element={<CarDetails className="The-body" />} />
+        <Route path="/cars/new" element={<NewCar className="The-body" />} />
+        <Route path="/delete" element={<DeleteCar className="The-body" />} />
+        <Route path="/favorite/" element={<Favorite className="The-body" />} />
+      </Routes>
+    </div>
+  </div>
+);
 
 export default App;
