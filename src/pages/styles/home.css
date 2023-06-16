@@ -20,10 +20,16 @@
 .ctn-del {
   height: 100vh;
   width: 100%;
+  padding: 0 2rem;
 }
 
 .ctn-words {
   padding: 0 1.5rem;
+}
+
+.deletebox {
+  /* margin-left: 2rem; */
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -70,6 +76,16 @@
   }
   
   .ctn-del {
-    padding: 1rem;;
+    padding: 1rem;
+    height: 100vh;
+    width: 100%;
+  }
+  .deletebox {
+    flex-direction: column;
+  }
+
+
+  .min-del {
+    
   }
 }
