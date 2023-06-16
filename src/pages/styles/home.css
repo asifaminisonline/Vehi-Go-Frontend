@@ -74,7 +74,7 @@
   .img-fav {
     width: 100% !important;
   }
-  
+
   .ctn-del {
     padding: 1rem;
     height: 100vh;
@@ -82,10 +82,5 @@
   }
   .deletebox {
     flex-direction: column;
-  }
-
-
-  .min-del {
-    
   }
 }

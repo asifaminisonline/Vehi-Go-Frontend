@@ -132,11 +132,12 @@
 .formCtn {
   width: 50% !important;
 }
+
 .newcar {
   margin-top: 2rem;
 }
 
-@media ( max-width: 768px) {
+@media (max-width: 768px) {
   .newcar {
     flex-direction: column;
     height: 100vh;
@@ -156,6 +157,4 @@
     background-size: cover;
     width: 100%;
   }
-  
 }
-
