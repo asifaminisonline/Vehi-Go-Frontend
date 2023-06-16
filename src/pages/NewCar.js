@@ -45,8 +45,9 @@ const NewCar = () => {
   };
 
   return (
-    <div className="mt-3 flex items-center gap-5 container" style={{ height: '90vh', width: '80%' }}>
-      <div className="formCtn w-50 flex flex-col px-3 py-5">
+    <div className=" newcar flex items-center gap-5 container" style={{ height: '90vh', width: '80%' }}>
+      <div className="img-form rounded-2xl" />
+      <div className="formCtn flex flex-col px-3 ">
         <h2 className=" ">Add Your car</h2>
         <p>Become a member of vehigo and make somes few bucks with your car </p>
         <form onSubmit={submitEventHandler} className=" w-100">
@@ -151,7 +152,6 @@ const NewCar = () => {
           </button>
         </form>
       </div>
-      <div className="img-form rounded-2xl" />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 
 const SidebarData2 = [
   {
-    path: '/',
+    path: '/cars',
     icon: <AiIcons.AiFillHome className="icon" />,
     title: 'Home',
   },
@@ -19,7 +19,7 @@ const SidebarData2 = [
     title: 'Delete car',
   },
   {
-    path: '',
+    path: '/favorite',
     icon: <FaIcons.FaHeart className="icon" />,
     title: 'Favorites',
   },

@@ -6,7 +6,7 @@ import * as AiIcons from 'react-icons/ai';
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/',
+    path: '/cars',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text',
   },
@@ -23,8 +23,8 @@ export const SidebarData = [
     cName: 'nav-text',
   },
   {
-    title: 'Favorites',
-    path: '',
+    title: 'My Favorites',
+    path: '/favorite',
     icon: <FaIcons.FaHeart />,
     cName: 'nav-text',
   },

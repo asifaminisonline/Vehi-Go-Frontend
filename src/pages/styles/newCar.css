@@ -128,3 +128,33 @@
   background-size: cover;
   width: 40%;
 }
+
+.formCtn {
+  width: 50% !important;
+}
+
+.newcar {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .newcar {
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 !important;
+    margin-top: 5rem !important;
+  }
+
+  .formCtn {
+    width: 100% !important;
+  }
+
+  .img-form {
+    padding: 9rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/src/assets/dodge.jpg');
+    background-size: cover;
+    width: 100%;
+  }
+}

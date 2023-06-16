@@ -1,20 +1,41 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect } from 'react';
+import { toast } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCar } from '../redux/SingleCarSlice';
+import { addFavorite } from '../redux/favoriteSlice';
 import Loading from './Loading';
 
 const CarDetails = () => {
   const { id } = useParams();
+  const newDate = new Date().toISOString().split('T')[0];
+  const user = localStorage.getItem('userId');
   const dispatch = useDispatch();
-  // const { loading, car } = useSelector((state) => state.singleCar);
-  const car = useSelector((state) => state.singlecar.car);
-  const loading = useSelector((state) => state.singlecar.loading);
 
+  const car = useSelector((state) => state.singleCar.car);
+  // localStorage.setItem('car', JSON.stringify(car));
+  // const getcarStorage = localStorage.getItem('car');
+  // const getcarStore = JSON.parse(getcarStorage);
+  // console.log('this is car storage', getcarStorage);
+  const loading = useSelector((state) => state.singleCar.loading);
+  const fData = {
+    car_id: id,
+    user_id: user,
+    picking_date: newDate,
+  };
+  const resData = {
+    reservation: fData,
+  };
   useEffect(() => {
     dispatch(getCar(id));
   }, [dispatch, id]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addFavorite(resData));
+    toast.success('reserved successfully');
+  };
 
   if (loading) {
     return <div className="flex justify-center min-h-[60vh] items-center"><Loading /></div>;
@@ -38,7 +59,7 @@ const CarDetails = () => {
       }}
     >
       <div
-        className="p-4 align-items-center shadow-lg justify-content-center"
+        className=" ctn-show p-4 align-items-center shadow-lg justify-content-center"
         style={{
 
           backgroundColor: '#F7F5FA',
@@ -50,7 +71,7 @@ const CarDetails = () => {
       >
 
         <div
-          className="d-flex ms-3 mt-4"
+          className="d-flex showcar ms-3 mt-4"
           style={{ maxWidth: '1440px' }}
         >
           <div>
@@ -65,7 +86,7 @@ const CarDetails = () => {
               }}
             />
           </div>
-          <div className="px-4" style={{ maxWidth: '600px' }}>
+          <div className=" ctn-words" style={{ maxWidth: '600px' }}>
             <h4 className=" uppercase">{car.name}</h4>
             <p
               className="text-start"
@@ -78,9 +99,9 @@ const CarDetails = () => {
               {car.description}
             </p>
             {/* <div className="bg-darkblue h-1 mx-2 mb-2" /> */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
 
-              <span className="font-medium">
+              <span className="font-medium mx-0">
                 Price: &nbsp;
                 <b className="mx-0">
                   $
@@ -92,6 +113,7 @@ const CarDetails = () => {
                 type="button"
                 className=" rounded-full bg-orange  hover:bg-orangelt px-3 py-1 text-white"
                 style={{ display: 'inline-block', width: 'fit-content' }}
+                onClick={handleSubmit}
               >
                 Favourite
               </button>

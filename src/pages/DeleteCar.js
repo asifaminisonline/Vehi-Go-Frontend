@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCars, deleteCar } from '../redux/CarSlice';
 import Loading from '../components/Loading';
+import './styles/home.css';
 
 const DeleteCar = () => {
   const dispatch = useDispatch();
@@ -25,11 +26,11 @@ const DeleteCar = () => {
       {
      load.loading ? <div className="flex justify-center min-h-[60vh] items-center"><Loading /></div>
        : (
-         <div className="ctn-del flex items-center justify-center">
+         <div className=" container ctn-del">
 
-           <div className=" mx-3 flex px-2 gap-4 py-5 bg-light md:flex-row flex- overflow-auto drop-shadow-lg hover:drop-shadow-full shadow-lg my-scroll">
+           <div className=" deletebox  mt-5  flex px-2 gap-4 py-5 bg-light  overflow-auto drop-shadow-lg hover:drop-shadow-full shadow-lg my-scroll">
              {cars.map((cars) => (
-               <div key={cars.id} className="mt-2 mx-auto mb-2 flex-col justify-center items-center">
+               <div key={cars.id} className="C mt-2 mx-auto mb-2 flex-col justify-center items-center">
                  <div className="h-52 w-56 md:h-48 md:w-52 mb-6 flex justify-center scale-90">
                    <img
                      src={cars.image}

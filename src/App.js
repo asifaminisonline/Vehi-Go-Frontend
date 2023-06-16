@@ -6,6 +6,7 @@ import Register from './pages/auth/register';
 import CarsList from './pages/Home';
 import CarDetails from './components/EachCar';
 import NewCar from './pages/NewCar';
+import Favorite from './pages/Favorite';
 import DeleteCar from './pages/DeleteCar';
 import Navbar from './components/Navigation/Navbar';
 import FixedNavbar from './components/Navigation/FixedNavbar';
@@ -23,11 +24,12 @@ function App() {
         <Toaster />
         <Routes>
           <Route path="/register" element={<Register className="The-body" />} />
-          <Route path="/login" element={<Login className="The-body" />} />
-          <Route path="/" element={<CarsList className="The-body" />} />
+          <Route path="/" element={<Login className="The-body" />} />
+          <Route path="/cars" element={<CarsList className="The-body" />} />
           <Route path="/cars/:id" element={<CarDetails className="The-body" />} />
           <Route path="/cars/new" element={<NewCar className="The-body" />} />
           <Route path="/delete" element={<DeleteCar className="The-body" />} />
+          <Route path="/favorite/" element={<Favorite className="The-body" />} />
         </Routes>
       </div>
     </div>
