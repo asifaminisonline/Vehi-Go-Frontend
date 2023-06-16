@@ -32,6 +32,19 @@
 **[Vehi-Go]** is a mock car rental web app that allows users to signup and login to be able to see available cars for rental, users are also able to add their cars to the list of cars available. The UI of the project is created with React and the backend is built with Rails API.
 
 ## 💻 Screenshots
+![2023-06-16T12_31_46](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/1c577da5-f190-4385-8235-a6f3ed5673ae)
+
+![2023-06-16T12_32_55](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/3f8c800f-aeec-4843-8377-7cea5c2aa93c)
+
+![2023-06-16T12_33_46](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/0ea2ab50-88ae-4b1c-bbe6-baa8ce6ad7f2)
+
+![2023-06-16T12_34_15](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/fe1a8a38-a062-4431-91c1-7e8dd168762e)
+
+![2023-06-16T12_37_40](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/3420a6c9-bba6-4a96-8a6d-23ebc79642cf)
+![2023-06-16T12_36_19](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/f5023471-d12f-474f-8716-d0d918ba271e)
+![2023-06-16T12_35_48](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/5e2b15f9-23c9-4018-b7d6-3cf32f80c885)
+![2023-06-16T12_35_04](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/7bbfb7a1-f079-4b04-bec4-b1f53be35f8b)
+
 
 ## 🔤 Kanban board 
 - [Link to Kanban board](https://github.com/users/Bludidi/projects/5) <br />
