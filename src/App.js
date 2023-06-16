@@ -13,7 +13,7 @@ import FixedNavbar from './components/Navigation/FixedNavbar';
 import './App.css';
 import './index.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <div className="fixed-navbar-container">

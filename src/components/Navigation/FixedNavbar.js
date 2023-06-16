@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import SidebarData2 from './SidebarData2';
 import './Navbar.css';
 
-function FixedNavbar() { 
+const FixedNavbar = () => { 
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
