@@ -1,22 +1,5 @@
-<a name="readme-top"></a>
+# VEHI-GO [FRONTEND]
 
-<!--
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
--->
 
 <!-- TABLE OF CONTENTS -->
 
@@ -33,7 +16,7 @@ OPTIONAL SECTIONS:
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#deployment)
+  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -44,17 +27,26 @@ OPTIONAL SECTIONS:
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Vehi-Go] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+**[Vehi-Go]** is a mock car rental web app that allows users to signup and login to be able to see available cars for rental, users are also able to add their cars to the list of cars available. The UI of the project is created with React and the backend is built with Rails API.
 
-**[your_project__name]** is a...
+## Kanban board 
+- [Link to Kanban board](https://github.com/users/Bludidi/projects/5) <br />
+***(Kanban board screenshot before we start working on the project)***
+![image](https://github.com/Bludidi/Exocars-front-end/assets/86472119/2394a3cf-691c-4164-b27b-4ed55e4dd721)
+
+## Backend links
+- [Link to backend API](https://github.com/tarikbouari/Exocars-Backend) 
+- [Link to backend Kanban board](https://github.com/users/tarikbouari/projects/4)
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
-
-> Describe the tech stack and include only the relevant sections that apply to your project.
+### Tech Stack 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=plastic&logo=react&logoColor=%2361DAFB) 
+![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=plastic&logo=ruby-on-rails&logoColor=white) 
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=plastic&logo=redux&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=plastic&logo=postgresql&logoColor=white)  <a name="tech-stack"></a>
 
 <details>
   <summary>Client</summary>
@@ -66,7 +58,7 @@ OPTIONAL SECTIONS:
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
   </ul>
 </details>
 
@@ -77,15 +69,14 @@ OPTIONAL SECTIONS:
   </ul>
 </details>
 
+
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[User needs to sign up and login to use the app]**
+- **[Using API for storing and distributing data]**
+- **[UI is designed to acommodate both desktop and mobile screens]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,9 +84,8 @@ OPTIONAL SECTIONS:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
 
-- [Live Demo Link](https://google.com)
+- [Live Demo Link](No link yet)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,83 +93,54 @@ OPTIONAL SECTIONS:
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Computer that's connected to the internet.
+- Get Ruby and React installed
+- Git and Node.js installed 
+- Code editor (preferably VS Code)
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
+ commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/Bludidi/vehi-go-front-end.git
+  cd vehi-go-front-end
 ```
---->
+
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
 ```sh
-  cd my-project
-  gem install
+  npm install # to install dependencies
 ```
---->
 
 ### Usage
 
-To run the project, execute the following command:
-
-<!--
-Example command:
+To run the project in the development environment, execute the following command:
 
 ```sh
-  rails server
+  npm start 
 ```
---->
+
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
 ```sh
-  bin/rails test test/models/article_test.rb
+  npm test
 ```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -187,19 +148,42 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+![my profile](https://avatars.githubusercontent.com/u/86472119?s=40&v=4) **Brian Buntu Ludidi** <br />
 
-👤 **Author1**
+<a href="https://github.com/Bludidi">
+  <img src="https://img.shields.io/github/followers/Bludidi?label=Follow%20%40Bludidi&style=social" alt="GitHub Follow">
+</a> <br />
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+<a href="https://twitter.com/BB_Ludidi">
+  <img src="https://img.shields.io/twitter/follow/BB_Ludidi?label=Follow%20%40BB_Ludidi&style=social" alt="Twitter Follow">
+</a> <br />
 
-👤 **Author2**
+<a href="https://www.linkedin.com/in/brian-ludidi-92754174">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=social&logo=linkedin&logoColor=blue" alt="LinkedIn">
+</a> <br /> <br /><br />
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **Tarike Bouari** <br /><br />
+<a href="https://github.com/tarikbouari">
+  <img src="https://img.shields.io/github/followers/tarikbouari?label=Follow%20%40tarikbouari&style=social" alt="GitHub Follow">
+</a> <br />
+<a href="https://twitter.com/tarikbouari">
+  <img src="https://img.shields.io/twitter/follow/tarikbouari?label=Follow%20%40tarikbouari&style=social" alt="Twitter Follow">
+</a> <br />
+<a href="https://www.linkedin.com/in/tarikbouari">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=social&logo=linkedin&logoColor=blue" alt="LinkedIn">
+</a> <br /> <br /><br />
+
+👤 **Asif Amin**
+
+<a href="https://github.com/asifaminisonline">
+  <img src="https://img.shields.io/github/followers/asifaminisonline?label=Follow%20%40asifaminisonline&style=social" alt="GitHub Follow">
+</a> <br />
+
+<a href="https://twitter.com/AminAmi53306702">
+  <img src="https://img.shields.io/twitter/follow/AminAmi53306702?label=Follow%20%40AminAmi53306702&style=social" alt="Twitter Follow">
+</a> <br /><br />
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -207,11 +191,9 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+- [ ] **[3D car display ]**
+- [ ] **[Show the loggedin user username and image ]**
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -229,9 +211,9 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
 
-If you like this project...
+
+If you like this project kindly add a star to it.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -239,32 +221,15 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
 
-I would like to thank...
+We would like to thank Microverse for a wonderful curriculum, and our peers also known as Micronauts for their support and motivation in this journey. 
+**Murat Korkmaz** from Behance for inspiring this project design
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
