@@ -34,7 +34,7 @@
 ## Kanban board 
 - [Link to Kanban board](https://github.com/users/Bludidi/projects/5) <br />
 
-***(Kanban board screenshot before we start working on the project)***
+***(Frontend Kanban board screenshot before we start working on the project)***
 
 ![image](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/b4402178-aa5b-4670-a412-b61f83308c58)
 
@@ -42,6 +42,11 @@
 ## Backend links
 - [Link to backend API](https://github.com/tarikbouari/Exocars-Backend) 
 - [Link to backend Kanban board](https://github.com/users/tarikbouari/projects/4)
+
+***(Backend Kanban board screenshot before we start working on the project)***
+
+ ![image](https://github.com/Bludidi/vehi-go-frontend/assets/86472119/2b62ce83-b35f-4498-9220-4d99f9a3fc13)
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
