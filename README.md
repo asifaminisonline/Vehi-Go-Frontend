@@ -31,7 +31,9 @@
 
 **[Vehi-Go]** is a mock car rental web app that allows users to signup and login to be able to see available cars for rental, users are also able to add their cars to the list of cars available. The UI of the project is created with React and the backend is built with Rails API.
 
-## Kanban board 
+## 💻 Screenshots
+
+## 🔤 Kanban board 
 - [Link to Kanban board](https://github.com/users/Bludidi/projects/5) <br />
 
 ***(Frontend Kanban board screenshot before we start working on the project)***
