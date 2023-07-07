@@ -23,7 +23,7 @@
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
 - [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license).
+- [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
