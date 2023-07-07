@@ -1,0 +1,86 @@
+/* stylelint-disable rule-empty-line-before */
+
+.img-banner {
+  padding: 10rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/src/assets/urus.png');
+  background-size: contain;
+  width: 60%;
+}
+
+.img-ca {
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* background-image: url('/src/assets/abs.png'); */
+  background-size: contain;
+}
+
+.ctn-del {
+  height: 100vh;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.ctn-words {
+  padding: 0 1.5rem;
+}
+
+.deletebox {
+  /* margin-left: 2rem; */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+
+  .fixed-navbar-container {
+    display: none;
+  }
+  .nav-menu2 {
+    display: none;
+  }
+  .banner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-ca {
+    width: 80%;
+  }
+
+  .text-feature {
+    width: 99%;
+  }
+
+  .showcar {
+    flex-direction: column;
+    margin: 0 !important;
+  }
+
+  .ctn-show {
+    width: 100% !important;
+  }
+
+  .ctn-words {
+    padding: 0 !important;
+  }
+
+  .ctn-favorite {
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+  }
+  .img-fav {
+    width: 100% !important;
+  }
+
+  .ctn-del {
+    padding: 1rem;
+    height: 100vh;
+    width: 100%;
+  }
+  .deletebox {
+    flex-direction: column;
+  }
+}
